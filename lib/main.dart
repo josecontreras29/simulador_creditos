@@ -25,18 +25,22 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-          ButtonDefault(
-              buttonStyle: StylesButtonDefault.defaultButton,
-              text: "Ingresar",
-              action: () {}),
-          ButtonDefault(
-              buttonStyle: StylesButtonDefault.variantButton,
-              text: "Registrarme",
-              action: () {})
-        ])));
+            child: Container(
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ButtonDefault(
+                buttonStyle: StylesButtonDefault.defaultButton,
+                text: "Ingresar",
+                action: () {}),
+            ButtonDefault(
+                buttonStyle: StylesButtonDefault.variantButton,
+                text: "Registrarme",
+                action: () {})
+          ]),
+    )));
   }
 }
 

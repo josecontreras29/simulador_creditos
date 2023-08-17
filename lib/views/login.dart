@@ -7,6 +7,7 @@ import 'package:simulador_creditos/components/checkbox_default.dart';
 import 'package:simulador_creditos/components/company_name.dart';
 import 'package:simulador_creditos/components/dialog_error_confirmation.dart';
 import 'package:simulador_creditos/components/textfield_login_register.dart';
+import 'package:simulador_creditos/providers/provider_home.dart';
 import 'package:simulador_creditos/providers/provider_login.dart';
 import 'package:simulador_creditos/providers/provider_register.dart';
 import 'package:simulador_creditos/styles/constants.dart';
@@ -162,4 +163,3 @@ class Login extends StatelessWidget {
                         ])))));
   }
 }
-

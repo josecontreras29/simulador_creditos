@@ -5,14 +5,16 @@ class TextfieldHome extends StatefulWidget {
   const TextfieldHome(
       {super.key,
       required this.title,
-      this.hint,
       required this.controller,
-      required this.helper});
+      this.action,
+      this.hint,
+      this.helper});
   final String title;
+  final TextEditingController controller;
+  final Function(String)? action;
   final String? hint;
   final String? helper;
 
-  final TextEditingController controller;
   @override
   State<TextfieldHome> createState() => _TextfieldHomeState();
 }
@@ -46,6 +48,9 @@ class _TextfieldHomeState extends State<TextfieldHome> {
                   textAlignVertical: TextAlignVertical.center,
                   style:
                       TextStyle(color: TextFieldHomeColors.text, fontSize: 14),
+                  onChanged: (value) {
+                    widget.action!(value);
+                  },
                   decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: widget.hint,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:simulador_creditos/classes/simulacion._credito.dart';
 
 class ProviderHome extends ChangeNotifier {
   String _valueSimulatedHome = "";
+  List<Simulaciones> listaSimulaciones = [];
 
   String get valueSimulatedHome => _valueSimulatedHome;
 
@@ -9,4 +11,6 @@ class ProviderHome extends ChangeNotifier {
     _valueSimulatedHome = value;
     notifyListeners();
   }
+
+
 }

@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:simulador_creditos/classes/user.dart';
+import 'package:simulador_creditos/classes/validate_form.dart';
 import 'package:simulador_creditos/components/button_default.dart';
 import 'package:simulador_creditos/components/company_name.dart';
 import 'package:simulador_creditos/components/terms_and_conditions.dart';
@@ -21,15 +22,6 @@ class Registro extends StatelessWidget {
   TextEditingController password = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
-
-  bool _validateAndSave() {
-    final form = _formKey.currentState;
-    if (form!.validate()) {
-      form.save();
-      return true;
-    }
-    return false;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +72,9 @@ class Registro extends StatelessWidget {
                           action: () {
                             ProviderRegister provider =
                                 context.read<ProviderRegister>();
-
-                            if (provider
-                                .checkRequirements(_validateAndSave())) {
+                            final validator = ValidateForm();
+                            if (provider.checkRequirements(
+                                validator.validateAndSave(_formKey))) {
                               provider.registeredUsers.add(User(
                                   nombre: nombre.text,
                                   identificacion: identificacion.text,

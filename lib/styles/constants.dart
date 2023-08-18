@@ -8,6 +8,7 @@ abstract class AppPictures {
   static String logoRegistroExitoso = "photos/logo_registroexitoso.png";
   static String splitLinesLogin = "photos/detail_login_3rd.png";
   static String handHome = "photos/waving_hand.png";
+  static String closeBottonDialog = "photos/cerrar_icon.png";
 }
 
 abstract class AppIcons {
@@ -48,10 +49,16 @@ abstract class CheckBoxColors {
   static Color border = const Color.fromRGBO(208, 213, 221, 1);
 }
 
-abstract class BottomNavigationBarColors {
-  static Color unselectedIcon = const Color.fromRGBO(199, 199, 199, 1);
-  static Color unselectedText = const Color.fromRGBO(191, 191, 191, 1);
+abstract class DropDownColors {
+  static Color background = Colors.white;
+  static Color title = const Color.fromRGBO(12, 16, 34, 1);
+  static Color text = Colors.black;
+  static Color hint = const Color.fromRGBO(177, 181, 187, 1);
+  static Color borderAndIcon = const Color.fromRGBO(200, 208, 217, 1);
+  static Color borderError = Colors.red;
 }
+
+
 
 abstract class AppTextStyles {
   static TextStyle textLogin = const TextStyle(

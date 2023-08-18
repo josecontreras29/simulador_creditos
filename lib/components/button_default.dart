@@ -14,18 +14,20 @@ class ButtonDefault extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-        overlayColor: MaterialStateProperty.all(Colors.transparent),
-        onTap: () => action(),
-        child: Container(
-            constraints: const BoxConstraints(maxWidth: 358),
-            height: 50,
-            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: AppColors.main),
-                color: buttonStyle.backgroundColor),
-            alignment: Alignment.center,
-            child: Text(text, style: buttonStyle.textStyle)));
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      child: InkWell(
+          overlayColor: MaterialStateProperty.all(Colors.transparent),
+          onTap: () => action(),
+          child: Container(
+              constraints: const BoxConstraints(maxWidth: 358),
+              height: 50,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: AppColors.main),
+                  color: buttonStyle.backgroundColor),
+              alignment: Alignment.center,
+              child: Text(text, style: buttonStyle.textStyle))),
+    );
   }
 }

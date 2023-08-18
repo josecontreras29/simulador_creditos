@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:simulador_creditos/providers/provider_home.dart';
 import 'package:simulador_creditos/providers/provider_login.dart';
 import 'package:simulador_creditos/providers/provider_register.dart';
-import 'package:simulador_creditos/views/home.dart';
+import 'package:simulador_creditos/views/home/home.dart';
 import 'package:simulador_creditos/views/initial_page.dart';
 import 'package:simulador_creditos/views/login.dart';
 

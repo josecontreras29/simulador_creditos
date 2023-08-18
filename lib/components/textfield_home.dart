@@ -48,9 +48,7 @@ class _TextfieldHomeState extends State<TextfieldHome> {
                   textAlignVertical: TextAlignVertical.center,
                   style:
                       TextStyle(color: TextFieldHomeColors.text, fontSize: 14),
-                  onChanged: (value) {
-                    widget.action!(value);
-                  },
+                  onChanged: (value) => widget.action!(value),
                   decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: widget.hint,

@@ -1,18 +1,18 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:simulador_creditos/classes/validate_form.dart';
 import 'package:simulador_creditos/components/button_default.dart';
 import 'package:simulador_creditos/components/button_login_3rd_person.dart';
 import 'package:simulador_creditos/components/checkbox_default.dart';
 import 'package:simulador_creditos/components/company_name.dart';
 import 'package:simulador_creditos/components/dialog_error_confirmation.dart';
 import 'package:simulador_creditos/components/textfield_login_register.dart';
-import 'package:simulador_creditos/providers/provider_home.dart';
 import 'package:simulador_creditos/providers/provider_login.dart';
 import 'package:simulador_creditos/providers/provider_register.dart';
 import 'package:simulador_creditos/styles/constants.dart';
 import 'package:simulador_creditos/styles/style_button_default.dart';
-import 'package:simulador_creditos/views/home.dart';
+import 'package:simulador_creditos/views/home/home.dart';
 import 'package:simulador_creditos/views/registro.dart';
 
 class Login extends StatelessWidget {
@@ -21,14 +21,6 @@ class Login extends StatelessWidget {
   TextEditingController emailorusuario = TextEditingController();
   TextEditingController password = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  bool _validateAndSave() {
-    final form = _formKey.currentState;
-    if (form!.validate()) {
-      form.save();
-      return true;
-    }
-    return false;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +101,8 @@ class Login extends StatelessWidget {
                               action: () {
                                 ProviderLogin provider =
                                     context.read<ProviderLogin>();
-                                if (_validateAndSave()) {
+                                final validator = ValidateForm();
+                                if (validator.validateAndSave(_formKey)) {
                                   if (provider.checkIfIsRegistered(
                                       emailorusuario.text,
                                       password.text,
